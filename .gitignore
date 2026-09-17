@@ -1,0 +1,96 @@
+# Operating-system files
+.DS_Store
+.DS_Store?
+Thumbs.db
+Desktop.ini
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.hypothesis/
+
+# Python packaging and build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+*.whl
+
+# Virtual environments and local configuration
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+!.env.example
+
+# Test and coverage reports
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# Editors and local tooling
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Research data and generated results
+data/raw/*
+data/processed/*
+results/figures/*
+results/logs/*
+results/tables/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!results/figures/.gitkeep
+!results/logs/.gitkeep
+!results/tables/.gitkeep
+
+# Common scientific-computing artifacts
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+*.mat
+*.nc
+*.zarr/
+*.parquet
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*~
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.out
+*.synctex.gz
+*.toc
