@@ -1,0 +1,70 @@
+VLASOV OPERATOR CONDITIONING AND SOURCE SENSITIVITY AUDIT
+========================================================================
+
+Velocity domain: [-6.0, 6.0]
+Wave number k: 0.5
+Velocity grids: [32, 64, 128]
+
+Two-beam equilibrium:
+  Beam drift u = 2.0
+  Beam standard deviation = 0.5
+
+Dominant discrete eigenvalues at Nv=128:
+  Maxwellian: 2.502410828549e-15 + i*-2.196878936894e+00
+  Two-beam:   2.048788302354e-01 + i*-1.122940347113e-16
+
+Reference two-beam growth rate: 2.048788302354e-01
+Reference implicit-Euler pole dt: 4.880933763878e+00
+
+Two-beam condition number at Nv=128:
+  dt*gamma=0.020: kappa=1.64174511e+00, sigma_min=7.91479935e-01, RHS sensitivity=1.22551290e+00
+  dt*gamma=0.050: kappa=3.08307728e+00, sigma_min=6.14592392e-01, RHS sensitivity=1.42558152e+00
+  dt*gamma=0.100: kappa=6.29523051e+00, sigma_min=4.92885606e-01, RHS sensitivity=1.60463162e+00
+  dt*gamma=0.250: kappa=2.08771418e+01, sigma_min=3.42318984e-01, RHS sensitivity=2.44501546e+00
+  dt*gamma=0.500: kappa=8.07334572e+01, sigma_min=1.74690612e-01, RHS sensitivity=4.83498828e+00
+  dt*gamma=0.750: kappa=3.04457774e+02, sigma_min=6.93086379e-02, RHS sensitivity=8.04706038e+00
+  dt*gamma=0.900: kappa=1.02692013e+03, sigma_min=2.46427372e-02, RHS sensitivity=1.02505470e+01
+  dt*gamma=0.950: kappa=2.24735657e+03, sigma_min=1.18842491e-02, RHS sensitivity=1.10190775e+01
+  dt*gamma=0.980: kappa=5.91821213e+03, sigma_min=4.65502929e-03, RHS sensitivity=1.14870091e+01
+  dt*gamma=1.020: kappa=6.32895647e+03, sigma_min=4.53017588e-03, RHS sensitivity=1.21180873e+01
+
+Maxwellian condition number at Nv=128:
+  dt*gamma_ref=0.020: kappa=1.28517359e+00, sigma_min=8.93191040e-01, RHS sensitivity=1.10998712e+00
+  dt*gamma_ref=0.050: kappa=1.81563631e+00, sigma_min=7.96696826e-01, RHS sensitivity=1.20001160e+00
+  dt*gamma_ref=0.100: kappa=2.82272092e+00, sigma_min=7.42417273e-01, RHS sensitivity=1.20720638e+00
+  dt*gamma_ref=0.250: kappa=5.50894551e+00, sigma_min=8.09253885e-01, RHS sensitivity=1.09800002e+00
+  dt*gamma_ref=0.500: kappa=9.44791894e+00, sigma_min=9.16694741e-01, RHS sensitivity=1.12267907e+00
+  dt*gamma_ref=0.750: kappa=1.34924649e+01, sigma_min=9.57469138e-01, RHS sensitivity=1.22801115e+00
+  dt*gamma_ref=0.900: kappa=1.59688712e+01, sigma_min=9.69443852e-01, RHS sensitivity=1.29767963e+00
+  dt*gamma_ref=0.950: kappa=1.67992227e+01, sigma_min=9.72408257e-01, RHS sensitivity=1.32091366e+00
+  dt*gamma_ref=0.980: kappa=1.72982157e+01, sigma_min=9.74013450e-01, RHS sensitivity=1.33479413e+00
+  dt*gamma_ref=1.020: kappa=1.79642305e+01, sigma_min=9.75984612e-01, RHS sensitivity=1.35320481e+00
+
+INTERPRETATION AND LIMITATIONS
+------------------------------------------------------------------------
+1. The two-beam equilibrium has a positive discrete growth-rate mode.
+2. For this mode, I-dt*M becomes singular when dt*gamma approaches 1.
+3. This is a pole of the implicit-Euler discretization, not a quantum
+   algorithm failure or a physical singularity of the continuous system.
+4. Large condition numbers describe worst-case matrix sensitivity.
+5. RHS-specific sensitivity additionally depends on the input state's
+   overlap with the left singular vectors of the operator.
+6. The RHS used here is proportional to the equilibrium distribution.
+7. Time steps close to the pole are stress-test cases, not recommended
+   physical integration settings.
+8. The two-beam calculation is a linearized Fourier-mode operator study.
+   It is not a nonlinear 1D1V two-stream simulation.
+9. No HHL, VQLS, LCU, or QSVT gate circuit has been synthesized here.
+
+All condition-number and sensitivity values are classical numerical
+diagnostics for the corrected implicit Vlasov-Poisson operator.
+
+VALIDATION
+------------------------------------------------------------------------
+Maximum matrix reconstruction error: 1.776357e-15
+Maximum normalized spectral bound: 7.423922042781e-01
+Minimum normalized spectral bound: 1.083963394598e-04
+Growth-rate convergence relative error: 1.502955e-05
+Minimum perturbed solution-state fidelity: 0.999999994854
+
+STATUS: NUMERICAL CONDITIONING AUDIT COMPLETED

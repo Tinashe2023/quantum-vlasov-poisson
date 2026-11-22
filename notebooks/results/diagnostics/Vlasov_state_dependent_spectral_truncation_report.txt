@@ -1,0 +1,84 @@
+VLASOV RHS SPECTRAL SUPPORT AND TRUNCATED INVERSE AUDIT
+============================================================================
+
+Velocity grid Nv: 128
+Velocity domain: [-6.0, 6.0]
+Wave number k: 0.5
+Two-beam drift: 2.0
+Two-beam sigma: 0.5
+Reference two-beam growth rate: 2.048788302354e-01
+
+SOURCE AND SINGULAR-VECTOR DEFINITIONS
+----------------------------------------------------------------------------
+The right-hand side is the normalized equilibrium f0.
+The SVD convention is A = U diag(sigma) V^dagger.
+RHS mode weights are |u_j^dagger b|^2.
+Inverse-solution modal energy is |u_j^dagger b|^2/sigma_j^2.
+
+SCENARIO SUMMARY
+----------------------------------------------------------------------------
+Maxwellian, dt*gamma=0.10: kappa=2.82272092e+00, source overlap at sigma_min=6.62518267e-01, solution overlap at sigma_min=7.99796278e-01, source sensitivity=1.20720638e+00, exact inverse success probability=6.86178264e-01
+Maxwellian, dt*gamma=0.50: kappa=9.44791894e+00, source overlap at sigma_min=7.99870321e-01, solution overlap at sigma_min=8.97997664e-01, source sensitivity=1.12267907e+00, exact inverse success probability=7.93393706e-01
+Maxwellian, dt*gamma=0.90: kappa=1.59688712e+01, source overlap at sigma_min=5.67965501e-01, solution overlap at sigma_min=7.37037263e-01, source sensitivity=1.29767963e+00, exact inverse success probability=5.93833950e-01
+Maxwellian, dt*gamma=0.98: kappa=1.72982157e+01, source overlap at sigma_min=5.34240598e-01, solution overlap at sigma_min=7.13101216e-01, source sensitivity=1.33479413e+00, exact inverse success probability=5.61269471e-01
+Two-beam, dt*gamma=0.10: kappa=6.29523051e+00, source overlap at sigma_min=5.00449715e-01, solution overlap at sigma_min=8.03037435e-01, source sensitivity=1.60463162e+00, exact inverse success probability=3.88373251e-01
+Two-beam, dt*gamma=0.50: kappa=8.07334572e+01, source overlap at sigma_min=1.94887324e-01, solution overlap at sigma_min=9.42277926e-01, source sensitivity=4.83498828e+00, exact inverse success probability=4.27768842e-02
+Two-beam, dt*gamma=0.90: kappa=1.02692013e+03, source overlap at sigma_min=9.73780114e-02, solution overlap at sigma_min=9.98177883e-01, source sensitivity=1.02505470e+01, exact inverse success probability=9.51712816e-03
+Two-beam, dt*gamma=0.98: kappa=5.91821213e+03, source overlap at sigma_min=8.70488115e-02, solution overlap at sigma_min=9.99930494e-01, source sensitivity=1.14870091e+01, exact inverse success probability=7.57854906e-03
+
+TRUNCATION THRESHOLD RESULTS
+----------------------------------------------------------------------------
+Maxwellian, dt*gamma=0.50: largest cutoff ratio meeting fidelity 0.999 = 1.0, effective condition number=9.447918935146134, retained RHS mass=0.9999999999999996, retained inverse-solution energy=0.9999999999999997, ideal success probability=0.7933937062108678
+Maxwellian, dt*gamma=0.90: largest cutoff ratio meeting fidelity 0.999 = 1.0, effective condition number=15.968871206686355, retained RHS mass=0.9999999999999997, retained inverse-solution energy=1.0, ideal success probability=0.5938339498600793
+Maxwellian, dt*gamma=0.98: largest cutoff ratio meeting fidelity 0.999 = 1.0, effective condition number=17.29821571692678, retained RHS mass=0.9999999999999997, retained inverse-solution energy=1.0, ideal success probability=0.5612694713276262
+Two-beam, dt*gamma=0.50: largest cutoff ratio meeting fidelity 0.999 = 1.0, effective condition number=80.73345720356076, retained RHS mass=1.0000000000000007, retained inverse-solution energy=0.9999999999999998, ideal success probability=0.04277688422463726
+Two-beam, dt*gamma=0.90: largest cutoff ratio meeting fidelity 0.999 = 1.0, effective condition number=1026.9201290705107, retained RHS mass=1.0000000000000002, retained inverse-solution energy=0.9999999999999999, ideal success probability=0.009517128161951223
+Two-beam, dt*gamma=0.98: largest cutoff ratio meeting fidelity 0.999 = 1.0, effective condition number=5918.21212945297, retained RHS mass=0.9999999999999999, retained inverse-solution energy=1.0, ideal success probability=0.007578549062954527
+
+INTERPRETATION AND LIMITATIONS
+----------------------------------------------------------------------------
+1. The singular spectrum and its RHS weights are exact classical
+   numerical diagnostics for the finite-dimensional matrix.
+2. The source spectral weight and inverse-solution modal energy
+   are different quantities because inverse weighting scales
+   each source mode by 1/sigma_j.
+3. A small source weight in a low-singular-value mode can still
+   produce a significant contribution to the inverse solution.
+4. Hard singular-value truncation is an ideal spectral-filter
+   benchmark. It does not synthesize the filter as a QSVT
+   polynomial or a quantum circuit.
+5. The ideal success probability assumes a bounded filter
+   with amplitude tau/sigma on retained singular modes.
+6. Actual QSVT degree, phase factors, block-encoding queries,
+   amplitude amplification, and circuit depth are not included.
+7. Truncation fidelity is measured against the exact normalized
+   solution, while the residual is measured against the original
+   untruncated right-hand side.
+8. Directional perturbations distinguish the physical RHS,
+   a random direction, and the extremal left singular vectors.
+9. The results do not establish a new quantum linear-system
+   algorithm or a quantum advantage.
+
+LITERATURE POSITIONING
+----------------------------------------------------------------------------
+The state-dependent truncation question is related to:
+Dalzell, Li and Su (2026),
+'Faster Quantum Linear System Solver Beyond the Condition Number'
+(arXiv:2607.07691).
+
+QSVT inverse-polynomial comparisons should account for:
+Sunderhauf et al. (2025/2026),
+'Matrix Inversion Polynomials for the Quantum Singular
+Value Transformation' (arXiv:2507.15537),
+and Wu (2026),
+'Degree and Normalization Frontiers for Bounded QSVT Inversion'
+(arXiv:2611.23505).
+
+VALIDATION
+----------------------------------------------------------------------------
+Maximum operator reconstruction error: 1.776357e-15
+Minimum truncation fidelity: 0.000000001154
+Maximum ideal truncated success probability: 0.793393706211
+Minimum directional perturbation fidelity: 0.999999973815
+
+STATUS: RHS SPECTRAL AND TRUNCATED INVERSE AUDIT COMPLETED

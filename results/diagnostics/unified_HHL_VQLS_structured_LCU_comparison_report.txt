@@ -1,0 +1,33 @@
+UNIFIED HHL / VQLS / STRUCTURED LCU COMPARISON
+======================================================================
+
+Common velocity-grid size: Nv = 32
+
+HHL:
+- Ideal spectral benchmark.
+- Fidelity and postselection are from the saved direct comparison.
+- No compiled QPE, controlled evolution, or gate count is available.
+
+VQLS:
+- Fidelity, residual, ansatz size, rotation count, CNOT count,
+  and optimizer iterations are taken from the saved direct benchmark.
+- Optimizer iteration limit must not be confused with convergence
+  to a globally optimal solution.
+
+Structured LCU:
+- Logical register estimate includes system, dilation, selector,
+  and clean predicate work ancillas under the chosen model.
+- Rotation proxies are not compiled gate counts.
+- Predicate CNOT-equivalent value is based on an illustrative
+  Toffoli conversion.
+- SELECT synthesis, state-preparation synthesis, multiplexed
+  rotation synthesis, routing, depth, and hardware noise remain
+  excluded.
+- Solution fidelity, solver residual, and algorithmic success
+  probability have not yet been benchmarked for LCU.
+
+The methods are not yet a fully apples-to-apples algorithmic
+comparison. This table consolidates available evidence and
+clearly marks missing measurements.
+
+END OF REPORT

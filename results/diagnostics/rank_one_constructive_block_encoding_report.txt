@@ -1,0 +1,19 @@
+CONSTRUCTIVE RANK-ONE BLOCK-ENCODING VALIDATION
+=================================================================
+Construction: state preparation + reversible zero/nonzero predicate
+Physical convention: corrected electron Vlasov-Poisson
+Grid sizes tested: [8, 16, 32, 64]
+
+Maximum errors:
+Factorization: 5.208681e-16
+Block encoding: 6.122461e-16
+Unitary: 3.010857e-15
+Predicate unitary: 0.000000e+00
+
+All factorization checks pass: True
+All block-encoding checks pass: True
+All unitarity checks pass: True
+
+This is matrix-level numerical validation.
+It is not gate synthesis, gate-count estimation, circuit-depth
+measurement, or a hardware execution result.

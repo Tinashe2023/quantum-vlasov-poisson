@@ -1,0 +1,57 @@
+STRUCTURED LCU ANALYTICAL RESOURCE MODEL
+=================================================================
+
+Purpose:
+Separate transparent analytical proxies from compiled circuit costs.
+
+Register assumptions:
+- System register: log2(Nv) qubits.
+- Block-encoding dilation: 1 ancilla qubit.
+- LCU selector: 2 qubits.
+- Predicate work ancillas: max(0, log2(Nv)-2) under the
+  clean-ancilla AND-chain model for Nv >= 8.
+
+State-preparation assumptions:
+- Generic real-amplitude state preparation proxy: Nv-1
+  rotation parameters per prepared state.
+- Rank-one branch prepares two states, u and z.
+- These rotation proxies are not compiled CNOT counts.
+
+Diagonal-branch assumption:
+- Nv multiplexed rotation parameters.
+- No CNOT count or depth is claimed.
+
+Predicate model:
+- Reversible predicate Q computes x != 0.
+- For n >= 3 system qubits, Toffoli estimate is
+  2(n-2)+1 under the stated clean-ancilla chain.
+- For n=2, use 2 CNOT + 1 Toffoli.
+- For n=1, use 1 CNOT.
+
+Gate-conversion assumptions:
+- Toffoli illustrative conversion: 6 CNOT.
+- Generic 2-qubit unitary upper-bound proxy:
+  3 CNOT.
+- PREPARE and PREPARE-dagger are both included in the
+  selector preparation proxy.
+
+Excluded from this model:
+- Synthesis of state-preparation circuits.
+- Synthesis of multiplexed diagonal rotations.
+- SELECT control synthesis.
+- Controlled dilation operations.
+- Precision-dependent gate synthesis.
+- Error-correction overhead.
+- Noise, hardware routing, SWAP overhead.
+- Circuit depth and parallel scheduling.
+
+Interpretation:
+- Rotation proxies are analytical counts of parameterized
+  rotations under generic constructions.
+- Predicate Toffoli estimates depend on the stated
+  reversible implementation.
+- CNOT-equivalent estimates are illustrative conversions,
+  not gate-synthesized benchmark results.
+- No hardware or compiled-circuit performance is claimed.
+
+END OF REPORT

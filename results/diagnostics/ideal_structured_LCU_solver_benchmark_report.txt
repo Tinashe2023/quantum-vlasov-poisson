@@ -1,0 +1,55 @@
+IDEAL STRUCTURED LCU INVERSE-TRANSFORM BENCHMARK
+========================================================================
+Nv = 32
+k = 0.5
+dt = 0.001
+
+LCU normalization:
+beta_I = 1.000000000000e+00
+beta_D = 3.000000000000e-03
+beta_R = 2.580906239804e-03
+alpha_LCU = 1.005580906240e+00
+
+Operator validation:
+Matrix reconstruction error = 4.337e-19
+Hermiticity error = 0.000e+00
+
+Ideal inverse benchmark:
+Min |eigenvalue(B_H)| = 9.931689170023e-01
+Inverse-transform scale gamma = 9.931689170023e-01
+Solution fidelity = 1.000000000000
+Global cost = 0.000000000000e+00
+Relative orthogonal residual = 1.354982902928e-15
+Inverse-transform success probability = 0.997426929101
+Upper-block leakage norm = 1.567316154891e-15
+Lower solution-block probability = 0.997426929101
+
+Resource accounting:
+Full inverse solver qubit count: NOT ESTIMATED.
+Full inverse solver gate count: NOT ESTIMATED.
+Full inverse solver depth: NOT ESTIMATED.
+The 3Nv-2 rotation-parameter proxy, predicate estimates,
+and selector PREPARE proxy refer only to the previously
+analysed structured A block-encoding construction.
+They must not be interpreted as full solver resources.
+
+Excluded:
+Compiled SELECT operations, inverse/state preparation,
+controlled rotations, reciprocal synthesis, precision,
+routing, circuit depth, noise, error correction,
+and hardware execution.
+
+Interpretation:
+This experiment applies an ideal spectral reciprocal
+transformation to the normalized Hermitian dilation
+constructed from the structured LCU operator.
+It validates the ideal numerical inverse-solver path.
+It is not an implemented LCU or QSVT circuit.
+
+UNIFIED COMPARISON:
+                                     method  Nv  solution_fidelity  global_cost  relative_orthogonal_residual  postselection_probability  logical_qubits_reported  rotation_or_resource_proxy  CNOT_count_reported                                                           benchmark_status
+                         Ideal spectral HHL  32           1.000000 1.110223e-16                  1.330135e-15                   0.997427                      6.0                         NaN                  NaN                       Saved ideal spectral benchmark; not gate-synthesized
+                                       VQLS  32           0.999997 2.559748e-06                  1.599921e-03                        NaN                      5.0                        40.0                 16.0                              Saved ideal variational statevector benchmark
+Structured LCU ideal inverse transformation  32           1.000000 0.000000e+00                  1.354983e-15                   0.997427                      NaN                         NaN                  NaN Ideal spectral inverse oracle; full solver circuit resources not estimated
+
+END OF REPORT

@@ -1,0 +1,38 @@
+QUANTUM RESOURCE BENCHMARK — DIAGNOSTIC REPORT
+=================================================================
+
+DATASET DIMENSIONS
+01_matrix_benchmark.csv: 4 rows x 15 columns
+02_ideal_HHL_benchmark.csv: 4 rows x 13 columns
+03_VQLS_summary.csv: 2 rows x 10 columns
+04_VQLS_seed_results.csv: 10 rows x 13 columns
+05_direct_HHL_VQLS_comparison.csv: 2 rows x 13 columns
+
+MATRIX / HHL CONSISTENCY
+Matrix Nv values: [8, 16, 32, 64]
+HHL Nv values: [8, 16, 32, 64]
+Matching Nv sets: True
+
+HHL FIDELITY
+Minimum: 1.000000000000
+Maximum: 1.000000000000
+
+VQLS ANSATZ DEPTHS
+[np.int64(3), np.int64(4)]
+
+DIRECT COMPARISON SOLVERS
+['Ideal spectral HHL', 'VQLS']
+
+MATRIX CONSTRUCTION ERRORS
+Maximum reconstruction error: 4.336809e-19
+Maximum block-encoding error: 1.443491e-16
+Maximum unitarity error: 4.826957e-14
+
+NUMERICAL FINITENESS
+01_matrix_benchmark.csv: all numeric values finite = True
+02_ideal_HHL_benchmark.csv: all numeric values finite = True
+03_VQLS_summary.csv: all numeric values finite = True
+04_VQLS_seed_results.csv: all numeric values finite = True
+05_direct_HHL_VQLS_comparison.csv: all numeric values finite = False
+
+END OF REPORT

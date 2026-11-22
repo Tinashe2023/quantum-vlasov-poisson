@@ -1,0 +1,115 @@
+PHYSICAL RHS EFFECTIVE CONDITION NUMBER AUDIT
+==============================================================================
+
+Nv: 128
+Velocity domain: [-6.0, 6.0]
+k: 0.5
+Two-beam drift: 2.0
+Two-beam width: 0.5
+Reference two-beam growth rate: 2.048788302354e-01
+
+PHYSICAL INPUT PROFILES
+------------------------------------------------------------------------------
+Maxwellian:
+  density = f0
+  bulk-flow shift = -df0/dv
+  thermal-width derivative = df0/d(theta)
+
+Two-beam:
+  density = f0
+  common bulk-flow shift = -df0/dv
+  thermal-width derivative = df0/d(sigma)
+  beam-separation derivative = df0/d(u)
+  beam-population imbalance derivative
+
+EFFECTIVE CONDITION NUMBER DEFINITION
+------------------------------------------------------------------------------
+The exact solution is x=A^-1 b and is normalized to |x>.
+For each epsilon, the cutoff tau is selected such that:
+  ||Pi_right,[0,tau) |x>|| <= epsilon
+  ||Pi_right,[0,tau] |x>|| > epsilon
+
+The normalized block encoding is B=A/alpha_LCU.
+Reported quantities distinguish:
+  matrix-relative kappa_eff = sigma_max(A)/tau
+  block-encoding kappa_eff = alpha_LCU/tau
+  matrix condition number = sigma_max(A)/sigma_min(A)
+  block-encoding worst-case bound = alpha_LCU/sigma_min(A)
+
+RESULTS AT EPSILON = 0.10
+------------------------------------------------------------------------------
+Maxwellian, bulk_flow_shift, dt*gamma=0.10: kappa=2.82272092e+00, kappa_eff=2.82272092e+00, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=3.50001785e-01
+Maxwellian, bulk_flow_shift, dt*gamma=0.50: kappa=9.44791894e+00, kappa_eff=9.44791894e+00, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=4.88689290e-02
+Maxwellian, bulk_flow_shift, dt*gamma=0.90: kappa=1.59688712e+01, kappa_eff=1.59688712e+01, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=1.67339675e-02
+Maxwellian, bulk_flow_shift, dt*gamma=0.98: kappa=1.72982157e+01, kappa_eff=1.72982157e+01, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=1.42013361e-02
+Maxwellian, density, dt*gamma=0.10: kappa=2.82272092e+00, kappa_eff=2.82272092e+00, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=6.86178264e-01
+Maxwellian, density, dt*gamma=0.50: kappa=9.44791894e+00, kappa_eff=9.44791894e+00, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=7.93393706e-01
+Maxwellian, density, dt*gamma=0.90: kappa=1.59688712e+01, kappa_eff=1.59688712e+01, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=5.93833950e-01
+Maxwellian, density, dt*gamma=0.98: kappa=1.72982157e+01, kappa_eff=1.72982157e+01, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=5.61269471e-01
+Maxwellian, thermal_width, dt*gamma=0.10: kappa=2.82272092e+00, kappa_eff=2.82272092e+00, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=5.21824732e-01
+Maxwellian, thermal_width, dt*gamma=0.50: kappa=9.44791894e+00, kappa_eff=9.44791894e+00, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=6.38916327e-01
+Maxwellian, thermal_width, dt*gamma=0.90: kappa=1.59688712e+01, kappa_eff=1.59688712e+01, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=5.70569947e-01
+Maxwellian, thermal_width, dt*gamma=0.98: kappa=1.72982157e+01, kappa_eff=1.72982157e+01, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=5.51428336e-01
+Two-beam, beam_population_imbalance, dt*gamma=0.10: kappa=6.29523051e+00, kappa_eff=6.29523051e+00, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=2.52026142e-01
+Two-beam, beam_population_imbalance, dt*gamma=0.50: kappa=8.07334572e+01, kappa_eff=8.07334572e+01, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=1.98631604e-01
+Two-beam, beam_population_imbalance, dt*gamma=0.90: kappa=1.02692013e+03, kappa_eff=1.02692013e+03, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=1.35239300e-01
+Two-beam, beam_population_imbalance, dt*gamma=0.98: kappa=5.91821213e+03, kappa_eff=5.91821213e+03, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=1.26051850e-01
+Two-beam, beam_separation, dt*gamma=0.10: kappa=6.29523051e+00, kappa_eff=6.29523051e+00, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=1.98590155e-01
+Two-beam, beam_separation, dt*gamma=0.50: kappa=8.07334572e+01, kappa_eff=8.07334572e+01, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=2.20842709e-02
+Two-beam, beam_separation, dt*gamma=0.90: kappa=1.02692013e+03, kappa_eff=1.02692013e+03, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=6.41726460e-03
+Two-beam, beam_separation, dt*gamma=0.98: kappa=5.91821213e+03, kappa_eff=5.91821213e+03, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=5.32277697e-03
+Two-beam, bulk_flow_shift, dt*gamma=0.10: kappa=6.29523051e+00, kappa_eff=6.29523051e+00, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=1.55782343e-01
+Two-beam, bulk_flow_shift, dt*gamma=0.50: kappa=8.07334572e+01, kappa_eff=8.07334572e+01, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=2.91807557e-02
+Two-beam, bulk_flow_shift, dt*gamma=0.90: kappa=1.02692013e+03, kappa_eff=1.02692013e+03, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=1.67615165e-02
+Two-beam, bulk_flow_shift, dt*gamma=0.98: kappa=5.91821213e+03, kappa_eff=5.91821213e+03, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=1.54129239e-02
+Two-beam, density, dt*gamma=0.10: kappa=6.29523051e+00, kappa_eff=6.29523051e+00, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=3.88373251e-01
+Two-beam, density, dt*gamma=0.50: kappa=8.07334572e+01, kappa_eff=8.07334572e+01, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=4.27768842e-02
+Two-beam, density, dt*gamma=0.90: kappa=1.02692013e+03, kappa_eff=1.02692013e+03, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=9.51712816e-03
+Two-beam, density, dt*gamma=0.98: kappa=5.91821213e+03, kappa_eff=5.91821213e+03, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=7.57854906e-03
+Two-beam, thermal_width, dt*gamma=0.10: kappa=6.29523051e+00, kappa_eff=3.05099306e+00, ratio=4.84651524e-01, discarded modes=16, tail norm=9.29051957e-02, fidelity=9.91368625e-01, ideal success=8.25073437e-01
+Two-beam, thermal_width, dt*gamma=0.50: kappa=8.07334572e+01, kappa_eff=8.07334572e+01, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=9.61278320e-03
+Two-beam, thermal_width, dt*gamma=0.90: kappa=1.02692013e+03, kappa_eff=1.02692013e+03, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=3.26351196e-03
+Two-beam, thermal_width, dt*gamma=0.98: kappa=5.91821213e+03, kappa_eff=5.91821213e+03, ratio=1.00000000e+00, discarded modes=0, tail norm=0.00000000e+00, fidelity=1.00000000e+00, ideal success=2.88674239e-03
+
+INTERPRETATION
+------------------------------------------------------------------------------
+1. The effective condition number is input-state dependent.
+2. A reduction below the worst-case matrix condition number
+   is useful only when the discarded exact-solution tail
+   remains below the selected epsilon.
+3. A large source overlap with a small singular mode is not
+   itself the criterion; inverse weighting determines the
+   exact solution tail.
+4. The density RHS reproduces the Cell12 baseline.
+5. Flow, thermal, separation and imbalance profiles are
+   alternative physically motivated Fourier-mode inputs.
+6. The profiles are linearized perturbation shapes; they are
+   not nonlinear time-evolved plasma distributions.
+7. The LCU normalization alpha_LCU is an upper bound on
+   ||A||. Hence alpha_LCU/tau and sigma_max/tau are both
+   reported to avoid conflating encoding scale with matrix
+   condition number.
+8. No state-preparation circuit is synthesized for these
+   alternative RHS profiles.
+9. No HHL, VQLS, LCU or QSVT hardware resource claim is made.
+
+LITERATURE CONTEXT
+------------------------------------------------------------------------------
+Dalzell, Li and Su (2026), arXiv:2607.07691, define a
+solution-tail effective condition number and develop
+quantum linear-system algorithms exploiting it.
+
+This cell tests whether physically motivated Vlasov-Poisson
+input profiles exhibit useful state-dependent reductions.
+It is an application-specific numerical study, not a new
+general effective-condition-number algorithm.
+
+VALIDATION
+------------------------------------------------------------------------------
+Maximum operator reconstruction error: 1.776357e-15
+Maximum effective/worst-case condition ratio: 1.000000000000
+Minimum effective/worst-case condition ratio: 0.458982070209
+Maximum discarded solution-tail norm excess: 0.000000e+00
+Minimum truncated fidelity: 0.843974127028
+
+STATUS: PHYSICAL RHS EFFECTIVE-CONDITION AUDIT COMPLETED
